@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Chinese</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span>Chinese</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="DeonAI.html" class="nav-highlight">DeonAI</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-header">
+            <h1>Get in Touch</h1>
+            <p>Let's discuss how we can collaborate on AI and blockchain innovations.</p>
+        </section>
+
+        <section class="contact-container">
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message" rows="6" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>Nairobi, Kenya</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p><a href="mailto:625deon@gmail.com">625deon@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/254702248984">+254 702 248 984</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Hugging Face</h3>
+                        <p><a href="https://huggingface.co/chinesemusk" target="_blank">View My Models & Spaces</a></p>
+                    </div>
+                </div>
+                
+                <div class="availability">
+                    <h3>Current Status</h3>
+                    <div class="status-indicator available">
+                        <div class="status-dot"></div>
+                        <span class="status-text">Available for Collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Chinese</h3>
+                <p>Building the future with AI and Blockchain</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Deon62" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/deon-gideon-4a1722252/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Deon_chinese" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://huggingface.co/chinesemusk" target="_blank"><i class="fas fa-robot"></i></a>
+                <a href="mailto:625deon@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/254702248984" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Chinese. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Burger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            
+            burger.addEventListener('click', function() {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+                
+                // Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                // Burger Animation
+                burger.classList.toggle('toggle');
+                
+                // Fix for mobile navigation link visibility
+                if (nav.classList.contains('nav-active')) {
+                    navLinks.forEach(link => {
+                        link.querySelector('a').style.color = 'white';
+                    });
+                    // Keep highlight link yellow if needed
+                    const highlightLink = document.querySelector('.nav-highlight');
+                    if (highlightLink) {
+                        highlightLink.style.color = '#ffcc00';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

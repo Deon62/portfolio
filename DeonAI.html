@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeonAI | AI/ML & Blockchain Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .ai-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .model-card {
+            background: var(--card-bg, #ffffff);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .model-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .model-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: #76b900;
+        }
+        
+        .model-title {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        
+        .model-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .model-links {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .model-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #76b900;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .model-links a:hover {
+            color: #8ede00;
+        }
+        
+        .access-cta {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(118, 185, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #76b900;
+        }
+        
+        .btn-access {
+            display: inline-block;
+            background: #76b900;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-access:hover {
+            background: #8ede00;
+            transform: translateY(-2px);
+        }
+        
+        /* Chat conversation styles */
+        .chat-container {
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 2rem 0;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chat-header {
+            background: #76b900;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .chat-messages {
+            padding: 1.5rem;
+            max-height: 500px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+        
+        .message {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .message-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .message-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .user-avatar {
+            background: #555555;
+        }
+        
+        .ai-avatar {
+            background: #76b900;
+        }
+        
+        .message-content {
+            padding: 1rem;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+        
+        .user-message .message-content {
+            background: #e6e6e6;
+            align-self: flex-end;
+            margin-left: 2rem;
+        }
+        
+        .ai-message .message-content {
+            background: #f0f7e6;
+            align-self: flex-start;
+            margin-right: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .model-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span>Hi I'm Deon</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="DeonAI.html" class="active nav-highlight">DeonAI</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="glitch-text">DeonAI</h1>
+                <div class="typewriter">
+                    <h2>Experience My AI Models</h2>
+                </div>
+                <p class="hero-bio">Try out my AI model hosted on Hugging Face Spaces. This interactive demo showcases my expertise in natural language processing and machine learning.</p>
+            </div>
+        </section>
+
+        <section class="ai-container">
+            <div class="model-card">
+                <div class="model-header">
+                    <div class="model-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="model-title">ChineseMusk AI</h3>
+                </div>
+                <p class="model-description">
+                    This is my custom AI model that can generate text, answer questions, and provide creative responses. Below is a sample conversation with the AI. Try it yourself on Hugging Face!
+                </p>
+                
+                <!-- Sample conversation -->
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Sample Conversation with DeonAI</span>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="message user-message">
+                            <div class="message-header">
+                                <div class="message-avatar user-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span>User</span>
+                            </div>
+                            <div class="message-content">
+                                Hello! Can you tell me about yourself and your capabilities?
+                            </div>
+                        </div>
+                        
+                        <div class="message ai-message">
+                            <div class="message-header">
+                                <div class="message-avatar ai-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <span>DeonAI</span>
+                            </div>
+                            <div class="message-content">
+                                Hi there! I'm DeonAI, a language model created by Deon "Chinese" Orina. I can help with a variety of tasks including answering questions, generating creative content, explaining complex topics, and providing assistance with coding and technical problems. I'm particularly knowledgeable about AI/ML and blockchain technologies!
+                            </div>
+                        </div>
+                        
+                        <div class="message user-message">
+                            <div class="message-header">
+                                <div class="message-avatar user-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span>User</span>
+                            </div>
+                            <div class="message-content">
+                                That's impressive! Can you explain how blockchain and AI can work together?
+                            </div>
+                        </div>
+                        
+                        <div class="message ai-message">
+                            <div class="message-header">
+                                <div class="message-avatar ai-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <span>DeonAI</span>
+                            </div>
+                            <div class="message-content">
+                                Absolutely! Blockchain and AI can complement each other in powerful ways:<br><br>
+                                
+                                1. <strong>Decentralized AI</strong>: Blockchain can help create decentralized AI systems where models are trained across distributed networks, reducing the monopoly of big tech companies.<br><br>
+                                
+                                2. <strong>Data Marketplaces</strong>: Blockchain enables secure, transparent data marketplaces where AI developers can access high-quality training data while ensuring data providers are fairly compensated.<br><br>
+                                
+                                3. <strong>Explainable AI</strong>: Blockchain's immutable ledger can record AI decision-making processes, making them more transparent and auditable.<br><br>
+                                
+                                4. <strong>Smart Contracts + AI</strong>: AI can optimize smart contract execution and identify potential vulnerabilities, while blockchain ensures the AI's decisions are recorded immutably.<br><br>
+                                
+                                5. <strong>Tokenized AI Services</strong>: AI services can be tokenized on blockchain, creating new economic models for AI usage and development.<br><br>
+                                
+                                A practical example is my Turing Insurance project, which uses AI for damage detection and blockchain for secure, automated claim payments.
+                            </div>
+                        </div>
+                        
+                        <div class="message user-message">
+                            <div class="message-header">
+                                <div class="message-avatar user-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span>User</span>
+                            </div>
+                            <div class="message-content">
+                                That's fascinating! What programming languages do you recommend for someone getting started with AI and blockchain?
+                            </div>
+                        </div>
+                        
+                        <div class="message ai-message">
+                            <div class="message-header">
+                                <div class="message-avatar ai-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <span>DeonAI</span>
+                            </div>
+                            <div class="message-content">
+                                For beginners interested in both AI and blockchain, I recommend:<br><br>
+                                
+                                <strong>For AI:</strong><br>
+                                - <strong>Python</strong>: Essential for AI development with libraries like TensorFlow, PyTorch, scikit-learn, and Hugging Face Transformers.<br>
+                                - <strong>R</strong>: Useful for statistical analysis and some machine learning applications.<br><br>
+                                
+                                <strong>For Blockchain:</strong><br>
+                                - <strong>Solidity</strong>: The primary language for Ethereum smart contracts.<br>
+                                - <strong>Rust</strong>: Used in blockchain projects like Solana and Near Protocol, known for performance and safety.<br>
+                                - <strong>JavaScript</strong>: Important for blockchain front-end development and some Node.js-based blockchains.<br><br>
+                                
+                                I'd suggest starting with Python as it's versatile for both AI and interacting with blockchains through web3 libraries. Then, depending on your interest, learn either Solidity (for Ethereum development) or Rust (for newer blockchain platforms).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA to try the real model -->
+                <div class="access-cta">
+                    <h4>Want to have your own conversation with DeonAI?</h4>
+                    <p>Try the full interactive model on Hugging Face Spaces!</p>
+                    <a href="https://huggingface.co/spaces/chinesemusk/Deon" target="_blank" class="btn-access">
+                        Chat with DeonAI on Hugging Face
+                    </a>
+                </div>
+                
+                <div class="model-links">
+                    <a href="https://huggingface.co/spaces/chinesemusk/Deon" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Open in Hugging Face
+                    </a>
+                    <a href="https://huggingface.co/chinesemusk" target="_blank">
+                        <i class="fas fa-user-circle"></i> My Hugging Face Profile
+                    </a>
+                    <a href="https://github.com/Deon62" target="_blank">
+                        <i class="fab fa-github"></i> GitHub Repository
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Chinese</h3>
+                <p>Building the future with AI and Blockchain</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Deon62" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/deon-gideon-4a1722252/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Deon_chinese" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://huggingface.co/chinesemusk" target="_blank"><i class="fas fa-robot"></i></a>
+                <a href="mailto:625deon@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/254702248984" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Chinese. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Burger menu functionality with visibility fix
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            
+            burger.addEventListener('click', function() {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+                
+                // Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                // Burger Animation
+                burger.classList.toggle('toggle');
+                
+                // Fix for mobile navigation link visibility
+                if (nav.classList.contains('nav-active')) {
+                    navLinks.forEach(link => {
+                        link.querySelector('a').style.color = 'white';
+                    });
+                    // Keep highlight link yellow if needed
+                    const highlightLink = document.querySelector('.nav-highlight');
+                    if (highlightLink) {
+                        highlightLink.style.color = '#ffcc00';
+                    }
+                }
+            });
+            
+            // Close menu when a link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('nav-active');
+                    burger.classList.remove('toggle');
+                    navLinks.forEach(link => link.style.animation = '');
+                });
+            });
+            
+            // Add keyboard accessibility
+            burger.setAttribute('tabindex', '0');
+            burger.setAttribute('role', 'button');
+            burger.setAttribute('aria-label', 'Menu');
+            
+            burger.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    burger.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

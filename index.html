@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese | AI/ML & Blockchain Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span>Hi I'm Deon</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="DeonAI.html" class="nav-highlight">DeonAI</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="glitch-text">Deon Orina</h1>
+                <div class="typewriter">
+                    <h2>AI Engineer & Blockchain Developer</h2>
+                </div>
+                <p class="hero-bio">Future CEO, current Computer Science whiz, and self-proclaimed AI whisperer. I sling code, tame neural networks, and sprinkle blockchain magic to build a tech utopia—one witty line of code at a time.</p>
+                <div class="hero-cta">
+                    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                    <a href="skills.html" class="btn btn-secondary">Explore Skills</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="profile-image">
+                    <img src="assets/101.jpg" alt="Deon Orina" class="profile-pic">
+                </div>
+                <div class="neural-network">
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="node"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/car.jpg')"></div>
+                    <div class="project-content">
+                        <h3>Turing Insurance</h3>
+                        <p>AI-powered car damage detection system integrated into an insurance automation flow with Stellar blockchain payments. Built with PyTorch and ResNet-50.</p>
+                        <div class="project-tags">
+                            <span>Computer Vision</span>
+                            <span>TensorFlow</span>
+                            <span>ResNet-50</span>
+                            <span>Llms</span>
+                            <span>Stellar</span>
+                        </div>
+                        <a href="https://github.com/Deon62/Turing-InsuranceAI" class="btn btn-view">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/block.jpg')"></div>
+                    <div class="project-content">
+                        <h3>Stellar crowdFunding</h3>
+                        <p>This projects contains three state of the are contracts built with soroban primarily for crowdFunding,timevault,and a DAO voting contract.</p>
+                        <div class="project-tags">
+                            <span>Stellar</span>
+                            <span>Soroban</span>
+                            <span>Smart Contracts</span>
+                            <span>Rust</span>
+                            <span>Blockchain</span>
+                        </div>
+                        <a href="https://github.com/HD-Devcamp-Africa/DeonStellar" class="btn btn-view">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/health.jpg')"></div>
+                    <div class="project-content">
+                        <h3>HeartCare</h3>
+                        <p>Predicting the chances of getting heart illness based on bigdata,using Ml random forest trained model</p>
+                        <div class="project-tags">
+                            <span>LLMs</span>
+                            <span>Health</span>
+                            <span>Models</span>
+                            <span>RAG</span>
+                        </div>
+                        <a href="https://github.com/Deon62/ML_heartmodel" class="btn btn-view">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="more-projects">
+                <a href="https://github.com/Deon62" class="btn btn-secondary">View More Projects on GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Chinese</h3>
+                <p>Building the future with AI and Blockchain</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Deon62" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/deon-gideon-4a1722252/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Deon_chinese" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://huggingface.co/chinesemusk" target="_blank"><i class="fas fa-robot"></i></a>
+                <a href="mailto:625deon@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/254702248984" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Chinese. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Burger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            
+            burger.addEventListener('click', function() {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+                
+                // Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                // Burger Animation
+                burger.classList.toggle('toggle');
+            });
+        });
+    </script>
+</body>
+</html>
