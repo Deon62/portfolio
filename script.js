@@ -74,51 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
    // ];
     const phrases = [
     // Your original one
-    "Hey there",
+    "Hey",
     "I'm",
     "Deon.",
 
-    // 1
-    "nicknamed",
-    "chinese",
-    "i love.",
 
-    // 2
-    "AI",
-    "more than",
-    "my imaginary .",
-
-    // 3
-    "rich ",
-    "girlfriend",
-    "isn't ",
-    "that an.",
-
-    // 4
-    " obsession",
-    "well",
-    "go ahead.",
-
-    // 5
-    "check my ",
-    "profile ",
-    "if i impress",
-    "you, get me.",
-
-    // 6
-    "some gig",
-    "so as i ",
-    "can get a .",
-
-    // 7
-    "life and ",
-    "a real ",
-    "Girlfriend .",
-
-    // 8
-    "c'amon",
-    "now",
-    "lers focus."
 ];
 
     let i = 0;
