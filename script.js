@@ -74,51 +74,51 @@ document.addEventListener('DOMContentLoaded', function() {
    // ];
     const phrases = [
     // Your original one
-    "How does a computer",
-    "get drunk?",
-    "By taking screenshots.",
+    "Hey there",
+    "I'm",
+    "Deon.",
 
     // 1
-    "Why do programmers hate",
-    "going outside?",
-    "There are too many bugs.",
+    "nicknamed",
+    "chinese",
+    "i love.",
 
     // 2
-    "Why did the startup founder",
-    "quit caffeine?",
-    "Too many Java exceptions.",
+    "AI",
+    "more than",
+    "my imaginary .",
 
     // 3
-    "Why don't AI models",
-    "tell good jokes?",
-    "They haven't been ",
-    "fine-tuned for humor.",
+    "rich ",
+    "girlfriend",
+    "isn't ",
+    "that an.",
 
     // 4
-    "Why did the developer",
-    "go broke?",
-    "Because he used up all his cache.",
+    " obsession",
+    "well",
+    "go ahead.",
 
     // 5
-    "How do devs flirt?",
-    "They say:",
-    "You're the semicolon",
-    "to my statements.",
+    "check my ",
+    "profile ",
+    "if i impress",
+    "you, get me.",
 
     // 6
-    "What's a blockchain dev’s",
-    "favorite party?",
-    "A consensus party.",
+    "some gig",
+    "so as i ",
+    "can get a .",
 
     // 7
-    "Why was the neural network",
-    "so dramatic?",
-    "It kept overfitting to the past.",
+    "life and ",
+    "a real ",
+    "Girlfriend .",
 
     // 8
-    "How do full-stack devs",
-    "stay balanced?",
-    "They keep everything in scope."
+    "c'amon",
+    "now",
+    "lers focus."
 ];
 
     let i = 0;
