@@ -92,6 +92,15 @@ section {
     background-color: var(--primary-color);
     border-radius: 2px;
 }
+#cursor {
+  color: #00ff99;
+  animation: blink 0.7s infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 /* ===== BUTTONS ===== */
 .btn {
