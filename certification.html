@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | AI/ML & Blockchain Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .certifications-section {
+            padding: 120px 2rem 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary, #ffffff);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary, #b0b0b0);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(102, 126, 234, 0.5);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .cert-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .cert-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-image:hover {
+            transform: scale(1.1);
+        }
+
+        .cert-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102, 234, 181, 0.8), rgba(75, 162, 130, 0.8));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .cert-image-container:hover .cert-overlay {
+            opacity: 1;
+        }
+
+        .cert-content {
+            padding: 2rem;
+        }
+
+        .cert-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary, #ffffff);
+            margin-bottom: 0.8rem;
+        }
+
+        .cert-description {
+            color: var(--text-secondary, #b0b0b0);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .cert-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .cert-date {
+            color: var(--accent-color, #667eea);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cert-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .cv-download-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cv-download-section h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--text-primary, #ffffff);
+            margin-bottom: 1rem;
+        }
+
+        .cv-download-section p {
+            font-size: 1.1rem;
+            color: var(--text-secondary, #b0b0b0);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90%;
+            object-fit: contain;
+            margin-top: 2%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .certifications-section {
+                padding: 100px 1rem 60px;
+            }
+
+            .section-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .cv-download-section {
+                padding: 2rem 1rem;
+            }
+
+            .cv-download-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin-top: 10%;
+            }
+
+            .close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span id="typewriter"></span><span id="cursor">|</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="certification.html" class="active">Certs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="DeonAI.html" class="nav-highlight">DeonAI</a></li>
+            </ul>
+            <div class="burger" tabindex="0">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="certifications-section">
+            <div class="section-header">
+                <h1>Professional Certifications</h1>
+                <p>Showcasing my commitment to continuous learning and professional development in AI, blockchain, and software engineering.</p>
+            </div>
+
+            <div class="certifications-grid">
+                <!-- Certification 1 -->
+                <div class="cert-card">
+                    <div class="cert-image-container" onclick="openModal('certs/cert.jpg', 'Professional Development Certificate')">
+                        <img src="certs/cert.jpg" alt="Professional Development Certificate" class="cert-image">
+                        <div class="cert-overlay">
+                            <i class="fas fa-search-plus"></i> Click to view
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">Professional Rust Development Certificate</h3>
+                        <p class="cert-description">
+                            Comprehensive certificate in Rust programming, covering advanced concepts and real-world applications.this certificate covers knowledge showcased during HERDAO bootcamp majoring in stellar blockchain development.
+                        </p>
+                        <div class="cert-meta">
+                            <span class="cert-date">Completed 2024</span>
+                            <span class="cert-badge">Professional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="cert-card">
+                    <div class="cert-image-container" onclick="openModal('certs/udem.jpg', 'Web Development Mastery')">
+                        <img src="certs/udemy1.jpg" alt="Web Development Mastery Certificate" class="cert-image">
+                        <div class="cert-overlay">
+                            <i class="fas fa-search-plus"></i> Click to view
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">Tensorflow Development Mastery</h3>
+                        <p class="cert-description">
+                            Advanced certification in Tensorflow development, showcasing expertise in building and deploying machine learning models. This certification validates my proficiency in leveraging Tensorflow for advanced AI applications.
+                        </p>
+                        <div class="cert-meta">
+                            <span class="cert-date">Completed 2024</span>
+                            <span class="cert-badge">Technical</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="cert-card">
+                    <div class="cert-image-container" onclick="openModal('certs/udemy2.jpg', 'Advanced Programming & AI')">
+                        <img src="certs/udemy2.jpg" alt="Advanced Programming Certificate" class="cert-image">
+                        <div class="cert-overlay">
+                            <i class="fas fa-search-plus"></i> Click to view
+                        </div>
+                    </div>
+                    <div class="cert-content">
+                        <h3 class="cert-title">Advanced Programming & AI</h3>
+                        <p class="cert-description">
+                            Specialized certification in advanced programming concepts, machine learning algorithms, and AI model development. Covers neural networks, deep learning frameworks, and practical AI implementation strategies.
+                        </p>
+                        <div class="cert-meta">
+                            <span class="cert-date">Completed 2024</span>
+                            <span class="cert-badge">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV Download Section -->
+            <div class="cv-download-section">
+                <h2>Download My Resume</h2>
+                <p>Get a comprehensive overview of my skills, experience, certifications, and projects in a professionally formatted document.</p>
+                <a href="certs/CV.pdf" download="Deon_Orina_Resume.pdf" class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Chinese</h3>
+                <p>Building the future with AI and Blockchain</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Deon62" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/deon-gideon-4a1722252/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Deon_chinese" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://huggingface.co/chinesemusk" target="_blank"><i class="fas fa-robot"></i></a>
+                <a href="mailto:625deon@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/254702248984" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Chinese. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for certificate viewing -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Modal functionality
+        function openModal(imageSrc, altText) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            modalImg.alt = altText;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Typewriter effect for logo (matching your existing pages)
+        const texts = ["chinese here😉", "AI Engineer", "Blockchain Dev", "Future CEO"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            const speed = isDeleting ? 50 : 100;
+            setTimeout(typeWriter, speed);
+        }
+
+        // Start typewriter effect when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
